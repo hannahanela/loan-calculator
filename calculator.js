@@ -24,7 +24,14 @@ function getFormValuesAndDisplayResults() {
 /** Set initial form values and show initial results. Called at app start. */
 
 function setInitialValues() {
-  // you can decide on some initial values
+  let amountInput = document.getElementById("loan-amount");
+  amountInput.value = 10000;
+
+  let yearsInput = document.getElementById("loan-years");
+  yearsInput.value = 10;
+
+  let rateInput = document.getElementById("loan-rate");
+  rateInput.value = 4.5;
 }
 
 
