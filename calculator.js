@@ -1,3 +1,4 @@
+"use strict";
 // Find DOM element and hold onto it, so we don't have to search for it
 // every time we use it.
 const calcForm = document.getElementById("calc-form");
@@ -6,12 +7,22 @@ const calcForm = document.getElementById("calc-form");
 /** Retrieve form values. Returns object: {amount, years, rate}. */
 
 function getFormValues() {
+  let amount = document.getElementById("loan-amount").value;
+  let years = document.getElementById("loan-years").value;
+  let rate = document.getElementById("loan-rate").value;
+
+  return { amount, years, rate };
 }
 
 
 /** Calculate monthly payment and return. */
 
 function calcMonthlyPayment(amount, years, rate) {
+  let i = (rate / 100) / 12;
+  let n = years * 12;
+  let monthlyPayment = (amount * i) / (1 - (1 + i)**(-Math.abs(n)));
+
+  return monthlyPayment;
 }
 
 
