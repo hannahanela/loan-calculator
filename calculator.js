@@ -7,6 +7,7 @@ const calcForm = document.getElementById("calc-form");
 /** Retrieve form values. Returns object: {amount, years, rate}. */
 
 function getFormValues() {
+  // TODO: handle form validation
   let amount = document.getElementById("loan-amount").value;
   let years = document.getElementById("loan-years").value;
   let rate = document.getElementById("loan-rate").value;
