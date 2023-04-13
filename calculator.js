@@ -29,6 +29,11 @@ function calcMonthlyPayment(amount, years, rate) {
 /** Get form values, calculate & update display. */
 
 function getFormValuesAndDisplayResults() {
+  let { amount, years, rate } = getFormValues();
+  let monthlyPayment = calcMonthlyPayment(amount, years, rate).toFixed(2);
+  let paymentSpan = document.getElementById("calc-monthly-payment");
+
+  paymentSpan.innerText = monthlyPayment;
 }
 
 
